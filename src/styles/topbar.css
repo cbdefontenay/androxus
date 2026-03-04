@@ -1,0 +1,104 @@
+:root {
+    --androxus-topbar-bg: #f7f2fa;
+    --androxus-topbar-on-surface: #1d192b;
+    --androxus-topbar-height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --androxus-topbar-bg: #1c1b1f;
+        --androxus-topbar-on-surface: #e6e1e5;
+    }
+}
+
+.androxus-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--androxus-topbar-height);
+    background-color: var(--androxus-topbar-bg);
+    color: var(--androxus-topbar-on-surface);
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    z-index: 1000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.androxus-topbar-leading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    z-index: 2;
+}
+
+.androxus-topbar-title-container {
+    flex: 1;
+    padding: 0 12px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.androxus-topbar-title-container.center-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.androxus-topbar-title-container.center-title .androxus-topbar-title {
+    pointer-events: auto;
+}
+
+.androxus-topbar-title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.androxus-topbar-actions {
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    z-index: 2;
+}
+
+.androxus-topbar-action-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 24px;
+    transition: background-color 0.2s;
+}
+
+.androxus-topbar-action-item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+    .androxus-topbar-action-item:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+}
+
+.androxus-topbar-action-item svg {
+    width: 24px;
+    height: 24px;
+}
