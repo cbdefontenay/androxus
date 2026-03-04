@@ -1,0 +1,135 @@
+:root {
+    --androxus-nav-bg: #f7f2fa;
+    --androxus-nav-item: #49454f;
+    --androxus-nav-active: #1d192b;
+    --androxus-nav-indicator: #e8def8;
+    --androxus-nav-height: 80px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --androxus-nav-bg: #1c1b1f;
+        --androxus-nav-item: #cac4d0;
+        --androxus-nav-active: #e6e1e5;
+        --androxus-nav-indicator: #4a4458;
+    }
+}
+
+.androxus-bottom-tabbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--androxus-nav-height);
+    background-color: var(--androxus-nav-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 12px;
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.androxus-bottom-tabbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--androxus-nav-item);
+    transition: color 0.2s ease-in-out;
+    border: none;
+    background: none;
+    outline: none;
+    gap: 4px;
+    /* Fix for the "blue flash" during tab clicks */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.androxus-bottom-tabbar-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 32px;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.androxus-bottom-tabbar-item.active {
+    color: var(--androxus-nav-active);
+}
+
+.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon-container {
+    background-color: var(--androxus-nav-indicator);
+    transform: scale(1);
+}
+
+.androxus-bottom-tabbar-icon {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.androxus-bottom-tabbar-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon {
+    color: #1d192b;
+    /* On Secondary Container */
+}
+
+.androxus-bottom-tabbar-title {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+}
+
+.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-title {
+    font-weight: 700;
+}
+
+.androxus-bottom-tabbar-item:active .androxus-bottom-tabbar-icon-container {
+    background-color: var(--androxus-nav-indicator);
+    opacity: 0.8;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .androxus-bottom-tabbar {
+        background-color: #1c1b1f;
+        /* Surface Container */
+        border-top-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .androxus-bottom-tabbar-item {
+        color: #c9c5d0;
+        /* On Surface Variant */
+    }
+
+    .androxus-bottom-tabbar-item.active {
+        color: #e6e1e5;
+        /* On Surface */
+    }
+
+    .androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon-container {
+        background-color: #4a4458;
+        /* Secondary Container */
+    }
+
+    .androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon {
+        color: #e8def8;
+        /* On Secondary Container */
+    }
+}
