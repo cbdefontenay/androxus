@@ -43,31 +43,23 @@ pub fn BottomTabBar<R: Routable + Clone + PartialEq + 'static>(props: BottomTabB
     
     rsx! {
         style { "{CSS}" }
-        nav {
-            class: format!("androxus-bottom-tabbar {}", props.class.unwrap_or_default()),
+        nav { class: format!("androxus-bottom-tabbar {}", props.class.unwrap_or_default()),
             for item in props.items {
                 Link {
                     to: item.route.clone(),
                     class: format!(
-                        "androxus-bottom-tabbar-item {} {}", 
-                        if route == item.route { 
-                            format!("active {}", props.active_class.clone().unwrap_or_default()) 
-                        } else { 
-                            "".to_string() 
+                        "androxus-bottom-tabbar-item {} {}",
+                        if route == item.route {
+                            format!("active {}", props.active_class.clone().unwrap_or_default())
+                        } else {
+                            "".to_string()
                         },
-                        props.item_class.clone().unwrap_or_default()
+                        props.item_class.clone().unwrap_or_default(),
                     ),
-                    div {
-                        class: "androxus-bottom-tabbar-icon-container",
-                        div {
-                            class: "androxus-bottom-tabbar-icon",
-                            {item.icon}
-                        }
+                    div { class: "androxus-bottom-tabbar-icon-container",
+                        div { class: "androxus-bottom-tabbar-icon", {item.icon} }
                     }
-                    span {
-                        class: "androxus-bottom-tabbar-title",
-                        "{item.title}"
-                    }
+                    span { class: "androxus-bottom-tabbar-title", "{item.title}" }
                 }
             }
         }

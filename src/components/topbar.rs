@@ -30,24 +30,22 @@ pub struct TopBarProps {
 pub fn TopBar(props: TopBarProps) -> Element {
     rsx! {
         style { "{CSS}" }
-        header {
-            class: format!("androxus-topbar {}", props.class.unwrap_or_default()),
-            
+        header { class: format!("androxus-topbar {}", props.class.unwrap_or_default()),
+
             if let Some(leading) = props.leading {
                 div { class: "androxus-topbar-leading", {leading} }
             }
-            
-            div { 
+
+            div {
                 class: format!(
-                    "androxus-topbar-title-container {}", 
-                    if props.center_title { "center-title" } else { "" }
+                    "androxus-topbar-title-container {}",
+                    if props.center_title { "center-title" } else { "" },
                 ),
-                h1 { 
-                    class: format!("androxus-topbar-title {}", props.title_class.unwrap_or_default()),
-                    "{props.title}" 
+                h1 { class: format!("androxus-topbar-title {}", props.title_class.unwrap_or_default()),
+                    "{props.title}"
                 }
             }
-            
+
             if let Some(actions) = props.actions {
                 div { class: "androxus-topbar-actions",
                     for action in actions {

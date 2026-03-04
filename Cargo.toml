@@ -2,6 +2,11 @@
 name = "androxus"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+description = "A UI component library for Android dev with Dioxus"
+repository = "https://github.com/cbdefontenay/androxus"
+readme = "README.md"
+keywords = ["Dioxus", "Android", "UI", "component"]
 
 [dependencies]
 dioxus = { version = "0.7.3", features = ["router"] }
