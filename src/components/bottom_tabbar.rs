@@ -40,7 +40,7 @@ impl<R: Routable + Clone + PartialEq + 'static> PartialEq for BottomTabItem<R> {
 #[component]
 pub fn BottomTabBar<R: Routable + Clone + PartialEq + 'static>(props: BottomTabBarProps<R>) -> Element {
     let route: R = use_route::<R>();
-    
+
     rsx! {
         style { "{CSS}" }
         nav { class: format!("androxus-bottom-tabbar {}", props.class.unwrap_or_default()),
