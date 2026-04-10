@@ -1,3 +1,4 @@
+@layer base {
 :root {
     --androxus-nav-bg: #f7f2fa;
     --androxus-nav-item: #49454f;
@@ -15,7 +16,7 @@
     }
 }
 
-.androxus-bottom-tabbar {
+:where(.androxus-bottom-tabbar) {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -31,7 +32,7 @@
     box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.androxus-bottom-tabbar-item {
+:where(.androxus-bottom-tabbar-item) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +50,7 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-.androxus-bottom-tabbar-icon-container {
+:where(.androxus-bottom-tabbar-icon-container) {
     position: relative;
     display: flex;
     align-items: center;
@@ -60,16 +61,16 @@
     transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.androxus-bottom-tabbar-item.active {
+:where(.androxus-bottom-tabbar-item.active) {
     color: var(--androxus-nav-active);
 }
 
-.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon-container {
+:where(.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon-container) {
     background-color: var(--androxus-nav-indicator);
     transform: scale(1);
 }
 
-.androxus-bottom-tabbar-icon {
+:where(.androxus-bottom-tabbar-icon) {
     font-size: 24px;
     display: flex;
     align-items: center;
@@ -77,17 +78,17 @@
     z-index: 1;
 }
 
-.androxus-bottom-tabbar-icon svg {
+:where(.androxus-bottom-tabbar-icon svg) {
     width: 24px;
     height: 24px;
 }
 
-.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon {
+:where(.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon) {
     color: #1d192b;
     /* On Secondary Container */
 }
 
-.androxus-bottom-tabbar-title {
+:where(.androxus-bottom-tabbar-title) {
     font-family: inherit;
     font-size: 12px;
     font-weight: 500;
@@ -95,40 +96,41 @@
     letter-spacing: 0.5px;
 }
 
-.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-title {
+:where(.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-title) {
     font-weight: 700;
 }
 
-.androxus-bottom-tabbar-item:active .androxus-bottom-tabbar-icon-container {
+:where(.androxus-bottom-tabbar-item:active .androxus-bottom-tabbar-icon-container) {
     background-color: var(--androxus-nav-indicator);
     opacity: 0.8;
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-    .androxus-bottom-tabbar {
+    :where(.androxus-bottom-tabbar) {
         background-color: #1c1b1f;
         /* Surface Container */
         border-top-color: rgba(255, 255, 255, 0.05);
     }
 
-    .androxus-bottom-tabbar-item {
+    :where(.androxus-bottom-tabbar-item) {
         color: #c9c5d0;
         /* On Surface Variant */
     }
 
-    .androxus-bottom-tabbar-item.active {
+    :where(.androxus-bottom-tabbar-item.active) {
         color: #e6e1e5;
         /* On Surface */
     }
 
-    .androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon-container {
+    :where(.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon-container) {
         background-color: #4a4458;
         /* Secondary Container */
     }
 
-    .androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon {
+    :where(.androxus-bottom-tabbar-item.active .androxus-bottom-tabbar-icon) {
         color: #e8def8;
         /* On Secondary Container */
     }
+}
 }

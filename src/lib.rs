@@ -1,6 +1,7 @@
 pub mod components;
 pub mod prelude;
-
+pub mod icons;
+mod code;
 /*
 Usage Example (Material Design 3):
 

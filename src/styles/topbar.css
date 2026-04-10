@@ -1,3 +1,4 @@
+@layer base {
 :root {
     --androxus-topbar-bg: #f7f2fa;
     --androxus-topbar-on-surface: #1d192b;
@@ -11,7 +12,7 @@
     }
 }
 
-.androxus-topbar {
+:where(.androxus-topbar) {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,7 +29,7 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-.androxus-topbar-leading {
+:where(.androxus-topbar-leading) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,14 +38,14 @@
     z-index: 2;
 }
 
-.androxus-topbar-title-container {
+:where(.androxus-topbar-title-container) {
     flex: 1;
     padding: 0 12px;
     overflow: hidden;
     z-index: 1;
 }
 
-.androxus-topbar-title-container.center-title {
+:where(.androxus-topbar-title-container.center-title) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,11 +57,11 @@
     z-index: 0;
 }
 
-.androxus-topbar-title-container.center-title .androxus-topbar-title {
+:where(.androxus-topbar-title-container.center-title .androxus-topbar-title) {
     pointer-events: auto;
 }
 
-.androxus-topbar-title {
+:where(.androxus-topbar-title) {
     font-size: 22px;
     font-weight: 400;
     line-height: 28px;
@@ -70,14 +71,14 @@
     overflow: hidden;
 }
 
-.androxus-topbar-actions {
+:where(.androxus-topbar-actions) {
     display: flex;
     align-items: center;
     padding-right: 4px;
     z-index: 2;
 }
 
-.androxus-topbar-action-item {
+:where(.androxus-topbar-action-item) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,17 +89,18 @@
     transition: background-color 0.2s;
 }
 
-.androxus-topbar-action-item:hover {
+:where(.androxus-topbar-action-item:hover) {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
 @media (prefers-color-scheme: dark) {
-    .androxus-topbar-action-item:hover {
+    :where(.androxus-topbar-action-item:hover) {
         background-color: rgba(255, 255, 255, 0.08);
     }
 }
 
-.androxus-topbar-action-item svg {
+:where(.androxus-topbar-action-item svg) {
     width: 24px;
     height: 24px;
+}
 }
