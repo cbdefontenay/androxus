@@ -11,9 +11,6 @@ keywords = ["Dioxus", "Android", "UI", "component"]
 [dependencies]
 dioxus = { version = "0.8.0-alpha.0", features = ["router"] }
 
-[target.'cfg(any())'.dependencies]
-time = "=0.3.36"
-
 [features]
 default = ["mobile"]
 mobile = ["dioxus/mobile"]

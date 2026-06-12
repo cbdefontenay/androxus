@@ -40,7 +40,6 @@ name = "androxus"
 version = "0.1.3"
 dependencies = [
  "dioxus",
- "time",
 ]
 
 [[package]]
