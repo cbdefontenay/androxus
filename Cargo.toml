@@ -11,8 +11,8 @@ keywords = ["Dioxus", "Android", "UI", "component"]
 [dependencies]
 dioxus = { version = "0.8.0-alpha.0", features = ["router"] }
 
-[patch.crates-io]
-time = { git = "https://github.com/time-rs/time", tag = "v0.3.36" }
+[target.'cfg(any())'.dependencies]
+time = "=0.3.36"
 
 [features]
 default = ["mobile"]
