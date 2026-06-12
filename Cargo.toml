@@ -1,6 +1,6 @@
 [package]
 name = "androxus"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2024"
 license = "MIT"
 description = "A UI component library for Android with Dioxus"
@@ -9,7 +9,7 @@ readme = "README.md"
 keywords = ["Dioxus", "Android", "UI", "component"]
 
 [dependencies]
-dioxus = { version = "0.7.5", features = ["router"] }
+dioxus = { version = "0.8.0-alpha.0", features = ["router"] }
 
 [features]
 default = ["mobile"]
