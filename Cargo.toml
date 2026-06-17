@@ -14,3 +14,4 @@ dioxus = { version = "0.8.0-alpha.0", features = ["router"] }
 [features]
 default = ["mobile"]
 mobile = ["dioxus/mobile"]
+web = ["dioxus/web"]
